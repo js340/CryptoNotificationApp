@@ -18,17 +18,17 @@ const CoinItem = ({ marketCoin }) => {
 
   const navigation = useNavigation();
 
-  const percentageColor = price_change_percentage_24h < 0 ? '#ea3943' : '#16c784'
+  const percentageColor = price_change_percentage_24h < 0 ? '#ea3943' : '#16c784' || 'white';
 
   const normaliseMarketCap = (market_cap) => {
-    if (market_cap > 1_000_000_000_000) {
-      return `${Math.floor(market_cap/1_000_000_000_000)}T`
-    } if (market_cap > 1_000_000_000) {
-      return `${Math.floor(market_cap/1_000_000_000)}B`
-    } if (market_cap > 1_000_000) {
-      return `${Math.floor(market_cap/1_000_000)}M`
-    } if (market_cap > 1_000) {
-      return `${Math.floor(market_cap/1_000)}K`
+    if (market_cap > 1e12) {
+      return `${(market_cap/1e12).toFixed(3)} T`
+    } if (market_cap > 1e9) {
+      return `${(market_cap/1e9).toFixed(3)} B`
+    } if (market_cap > 1e6) {
+      return `${(market_cap/1e6).toFixed(3)} M`
+    } if (market_cap > 1e3) {
+      return `${(market_cap/1e3).toFixed(3)} K`
     }
     return market_cap
   };
@@ -55,7 +55,7 @@ const CoinItem = ({ marketCoin }) => {
             color={percentageColor}
             style={{ alignSelf: 'center', marginRight: 5 }} 
           />
-          <Text style={{color: percentageColor}}>{price_change_percentage_24h.toFixed(2)}%</Text>
+          <Text style={{color: percentageColor}}>{price_change_percentage_24h?.toFixed(2)}%</Text>
         </View>
       </View>
       <View style={{ marginLeft: 'auto', alignItems: 'flex-end'}}>

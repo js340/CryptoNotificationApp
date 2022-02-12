@@ -19,7 +19,7 @@ const CoinDetailHeader = (props) => {
 
   const checkIfCoinIsWatchlisted = () => watchlistCoinIds.some((coinIdValue) => coinIdValue === coinId);
 
-  const andleWatchlistCoin = () => {
+  const handleWatchlistCoin = () => {
     if (checkIfCoinIsWatchlisted()) {
       return removeWatchlistCoinId(coinId);
     }
@@ -45,7 +45,7 @@ const CoinDetailHeader = (props) => {
         name={checkIfCoinIsWatchlisted() ? "star" : "star-o"} 
         size={25} 
         color={checkIfCoinIsWatchlisted() ? "#ffbf00" : "white"}
-        onPress={andleWatchlistCoin} 
+        onPress={handleWatchlistCoin} 
       />
     </View>
   );

@@ -35,7 +35,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: 'white',
   },
-
+  filtersContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#2b2b2b',
+    paddingVertical: 5,
+    borderRadius: 5,
+    margin: 12,
+  },
+  filtersText: {
+    color: 'white',
+  }
 });
 
 export default styles;
