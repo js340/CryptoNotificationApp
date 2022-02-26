@@ -3,24 +3,24 @@ import { backgroundColor, borderBottomColor } from "react-native/Libraries/Compo
 
 const styles = StyleSheet.create({
   currentPrice: {
-    color: 'white', 
-    fontSize: 30, 
-    fontWeight: '600', 
+    color: 'white',
+    fontSize: 30,
+    fontWeight: '600',
     letterSpacing: 1,
   },
   name: {
-    color: 'white', 
+    color: 'white',
     fontSize: 15,
   },
   priceContainer: {
-    padding: 15, 
-    flexDirection: 'row', 
+    padding: 15,
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   priceChange: {
-    color: 'white', 
-    fontSize: 17, 
+    color: 'white',
+    fontSize: 17,
     fontWeight: '500',
     alignSelf: 'center',
   },
@@ -45,6 +45,20 @@ const styles = StyleSheet.create({
   },
   filtersText: {
     color: 'white',
+  },
+  candleStickTextContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: 10,
+    marginTop: 20,
+  },
+  candleStickText: {
+    color: 'white',
+    fontWeight: '700',
+  },
+  candleStickTextLabel: {
+    color: 'grey',
+    fontSize: 13,
   }
 });
 

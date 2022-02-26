@@ -29,17 +29,20 @@ const WatchListScreen = () => {
   }, [watchlistCoinIds]);
 
   return (
-    <FlatList 
-      data = {coins}
-      renderItem = {({ item }) => <CoinItem marketCoin={item} />}
-      refreshControl={
-        <RefreshControl 
-          refreshing={loading}
-          tintColor='white'
-          onRefresh={fetchWatchlistedCoins}
-        />
-      }
-    />
+    <View>
+      <Text style={{fontFamily: 'DroidSans', color: 'white', fontSize: 25, letterSpacing: 1, paddingHorizontal: 20, paddingBottom: 10 }}>Watchlist</Text>
+      <FlatList 
+        data = {coins}
+        renderItem = {({ item }) => <CoinItem marketCoin={item} />}
+        refreshControl={
+          <RefreshControl 
+            refreshing={loading}
+            tintColor='white'
+            onRefresh={watchlistCoinIds.length > 0 ?  fetchWatchlistedCoins : null}
+          />
+        }
+      />      
+    </View>
   );
 }
 
