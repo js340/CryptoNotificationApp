@@ -71,6 +71,7 @@ const CoinDetailedScreen = () => {
       }
       const token = (await Notifications.getExpoPushTokenAsync()).data;
       await storage.setItem('expopushtoken', token);
+      console.log(token);
     } else {
       alert('Must use physical device for Push Notifications');
     }
